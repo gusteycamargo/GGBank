@@ -1,15 +1,11 @@
 export default {
     title: 'light',
     colors: {
-        primary: '#042963',
-        secundary: '#5478B1',
-        background: '#FFF',
+        primary: '#3A0CA3',
+        secundary: '#4361EE',
+        background: '#F5F5F5',
         headerBackground: '#FFF',
         text: '#333',
-        componentBackgroundColor: '#FFF',
-        componentTextColor: '#000',
-        componentPlaceholderColor: '#777',
-        componentDayPickerHover: '#046346b0'
     }
 
 }

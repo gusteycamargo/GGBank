@@ -3,12 +3,12 @@ import api from './services/api';
 import GlobalStyle from './styles/global';
 import light from './styles/themes/light';
 import dark from './styles/themes/dark'; 
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
 import usePeristedState from './utils/usePersistedState';
 import Login from './pages/Login';
 
 function App() {
-  const [theme, setTheme] = usePeristedState('theme', light);
+  const [theme, setTheme] = usePeristedState<DefaultTheme>('themeFinances', light);
 
     const toggleTheme = () => {
         setTheme(theme.title === 'light' ? dark : light);
@@ -17,7 +17,7 @@ function App() {
     return (
       <ThemeProvider theme={theme}>
           <GlobalStyle/>
-            <Login></Login>
+            <Login toggleTheme={toggleTheme}/>
                   {/* <Index toggleTheme={toggleTheme}></Index>
                   <Routes/> */}
       </ThemeProvider>
