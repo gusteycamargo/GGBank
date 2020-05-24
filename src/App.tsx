@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import api from './services/api';
+import GlobalStyle from './styles/global';
+import light from './styles/themes/light';
+import dark from './styles/themes/dark'; 
+import { ThemeProvider } from 'styled-components';
+import usePeristedState from './utils/usePersistedState';
+import Login from './pages/Login';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [theme, setTheme] = usePeristedState('theme', light);
+
+    const toggleTheme = () => {
+        setTheme(theme.title === 'light' ? dark : light);
+    };
+
+    return (
+      <ThemeProvider theme={theme}>
+          <GlobalStyle/>
+            <Login></Login>
+                  {/* <Index toggleTheme={toggleTheme}></Index>
+                  <Routes/> */}
+      </ThemeProvider>
+    );
 }
 
 export default App;
