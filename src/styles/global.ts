@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+
   * {
     margin: 0;
     padding: 0;
@@ -9,7 +11,7 @@ export default createGlobalStyle`
   body, html {
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};
-    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-family: Inter, sans-serif;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     height: 100%;

@@ -1,30 +1,31 @@
-import React, { useContext } from 'react';
-import { Header } from './styles';
-import Switch from 'react-switch';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
+import { Container, FormContainer, Form, Input, ButtonLogin } from './styles';
 
-interface Props {
-    toggleTheme(): void;
-}
-
-const Login: React.FC<Props> = ({ toggleTheme }) => {
-    const { title } = useContext(ThemeContext);
+const Login: React.FC = () => {
     
-    return(
-        <Header>
-            Login
+    function handleLogin(e: any) {
+        e.preventDefault();
 
-            <Switch
-                onChange={toggleTheme}
-                checked={title === 'dark'}
-                checkedIcon={false}
-                uncheckedIcon={false}
-                height={10}
-                width={40}
-                handleDiameter={20}
-                
-            />
-        </Header>
+        alert('clicado');
+    }
+
+    return(
+        <Container>
+            <FormContainer onSubmit={handleLogin}>
+                <Form>
+                    <label>E-mail</label>
+                    <Input
+                        
+                    />
+                    <label>Senha</label>
+                    <Input
+                        
+                    />
+                    <ButtonLogin type="submit">Login</ButtonLogin>
+                </Form>
+            </FormContainer>
+
+        </Container>
     );
 }
 

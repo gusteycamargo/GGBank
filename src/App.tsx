@@ -6,6 +6,7 @@ import dark from './styles/themes/dark';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import usePeristedState from './utils/usePersistedState';
 import Login from './pages/Login';
+import Header from './components/Header';
 
 function App() {
   const [theme, setTheme] = usePeristedState<DefaultTheme>('themeFinances', light);
@@ -17,7 +18,8 @@ function App() {
     return (
       <ThemeProvider theme={theme}>
           <GlobalStyle/>
-            <Login toggleTheme={toggleTheme}/>
+          <Header toggleTheme={toggleTheme}/>
+            <Login />
                   {/* <Index toggleTheme={toggleTheme}></Index>
                   <Routes/> */}
       </ThemeProvider>
