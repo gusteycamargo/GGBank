@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const FormContainer = styled.div`
     width: 600px;
-    height: 450px;
+    height: auto;
     display: flex;
     flex-direction: column;
     border-radius: 10px 10px 10px 10px;
@@ -66,4 +66,11 @@ export const ButtonLogin = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+
+    &:hover {
+        trasition: 1s;
+        background: ${props => props.theme.colors.secundary};
+    }
 `;

@@ -8,6 +8,12 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  #root {
+    height: calc(100% - 60px);
+    width: 100%;
+  }
+
   body, html {
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};
