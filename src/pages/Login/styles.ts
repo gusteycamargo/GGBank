@@ -30,18 +30,28 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
-    font-size: 11.2px;
+    font-size: 15px;
+    padding-bottom: 10px;
 `;
 
 export const Input = styled.input`
     height: 46px;
     width: 100%;
     padding: 0 20px;
-    color: #777;
+    color: #333;
     font-size: 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
     margin-bottom: 15px;
+
+    &:focus:not(:disabled) {
+        outline: none;
+        box-shadow: inset #06f 0 0 0 1px,inset #fff 0 0 0 100px!important;
+    }
+
+    &:hover {
+        box-shadow: inset #b1b0b5 0 0 0 1px,inset #fff 0 0 0 100px!important;
+    }
 `;
 
 export const ButtonLogin = styled.button`
