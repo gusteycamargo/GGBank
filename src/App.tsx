@@ -1,11 +1,11 @@
 import React from 'react';
-import api from './services/api';
 import GlobalStyle from './styles/global';
 import light from './styles/themes/light';
 import dark from './styles/themes/dark'; 
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import usePeristedState from './utils/usePersistedState';
-import Login from './pages/Login';
+import Routes from './routes';
+import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 
 function App() {
@@ -16,13 +16,13 @@ function App() {
     };
 
     return (
-      <ThemeProvider theme={theme}>
-          <GlobalStyle/>
-          <Header toggleTheme={toggleTheme}/>
-            <Login />
-                  {/* <Index toggleTheme={toggleTheme}></Index>
-                  <Routes/> */}
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+            <GlobalStyle/>
+            <Header toggleTheme={toggleTheme}/>
+              <Routes/>
+        </ThemeProvider>
+      </BrowserRouter>
     );
 }
 

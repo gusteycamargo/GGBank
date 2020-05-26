@@ -1,12 +1,14 @@
 import React from 'react';
 import { Container, FormContainer, Form, Input, ButtonLogin, Label } from './styles';
+import { withRouter, RouteComponentProps } from "react-router-dom";
+interface ChildComponentProps extends RouteComponentProps<any> {}
 
-const Login: React.FC = () => {
+const Login: React.FC<ChildComponentProps> = ({ history }) => {
     
     function handleLogin(e: any) {
         e.preventDefault();
 
-        alert('clicado');
+        history.push('/home');
     }
 
     return(
@@ -16,10 +18,12 @@ const Login: React.FC = () => {
                     <Label htmlFor="Email">E-mail</Label>
                     <Input
                        id="Email" 
+                       type="email"
                     />
                     <Label htmlFor="Password">Senha</Label>
                     <Input
                         id="Password"
+                        type="password"
                     />
                     <ButtonLogin type="submit">Login</ButtonLogin>
                 </Form>
@@ -29,4 +33,4 @@ const Login: React.FC = () => {
     );
 }
 
-export default Login; 
+export default withRouter(Login); 
