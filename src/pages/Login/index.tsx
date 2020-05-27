@@ -2,36 +2,42 @@ import React, { useState } from 'react';
 import { Container, FormContainer, Form, Input, ButtonLogin, Label } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications';
+import ClockLoader from "react-spinners/ClockLoader";
+import { login } from '../../services/auth';
+import api from '../../services/api';
 
 interface ChildComponentProps extends RouteComponentProps<any> {}
 
 const Login: React.FC<ChildComponentProps> = ({ history }) => {
     const { addToast } = useToasts()
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    function handleLogin(e: any) {
+    async function handleLogin(e: any) {
         e.preventDefault();
-        addToast('Ocorreu um erro ao realizar seu login, verifique seus dados e tente novamente!', {
-            appearance: 'error',
-            autoDismiss: true,
-        })
-        // if (!username || !password) {
-        //     setError("Preencha todos os campos para continuar!");
-        // } else {
-        //     try {
-        //         setIsLoading(true);
-        //         const response = await api.post("/sessions", { username, password });
-        //         login(response.data.token);
-        //         const responseUser = await api.get('/userLogged');
-        //         addUserAndCampus(responseUser.data.user, responseUser.data.campus);
+        if (!email || !password) {
+            addToast('Preencha todos os campos para realizar o login!', {
+                appearance: 'error',
+                autoDismiss: true,
+            })
+        } else {
+            try {
+                setIsLoading(true);
+                const response = await api.post("/sessions", { email, password });
+                login(response.data.token);
 
-        //         history.push('/home');
-        //     } catch (err) {
-        //         console.log(err);
+                history.push('/home');
+            } catch (err) {
+                console.log(err);
                 
-        //         setError("Nome de usuário ou senha incorreta.");
-        //     }
-        //     setIsLoading(false);
-        // }
+                addToast('Ocorreu um erro ao realizar seu login, verifique seus dados e tente novamente!', {
+                    appearance: 'error',
+                    autoDismiss: true,
+                })
+            }
+            setIsLoading(false);
+        }
     }
 
     return(
@@ -42,13 +48,25 @@ const Login: React.FC<ChildComponentProps> = ({ history }) => {
                     <Input
                        id="Email" 
                        type="email"
+                       value={email}
+                       onChange={e => setEmail(e.target.value)}
                     />
                     <Label htmlFor="Password">Senha</Label>
                     <Input
                         id="Password"
                         type="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                     />
-                    <ButtonLogin type="submit">Login</ButtonLogin>
+                    <ButtonLogin type="submit">
+                        Login
+                        <ClockLoader
+                            size={15}
+                            color={"#FFF"}
+                            loading={isLoading}
+                            css="margin-left: 10px"
+                        />
+                    </ButtonLogin>
                 </Form>
             </FormContainer>
 
