@@ -3,7 +3,13 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { isAuthenticated } from "./services/auth";
 import Login from './pages/Login';
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
+interface IProps {
+  exact?: boolean;
+  path: string;
+  component: React.ComponentType<any>;
+}
+
+const PrivateRoute = ({ component: Component, ...rest }: IProps) => (
   <Route
     {...rest}
     render={props =>

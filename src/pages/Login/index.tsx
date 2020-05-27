@@ -1,14 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, FormContainer, Form, Input, ButtonLogin, Label } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
+import { useToasts } from 'react-toast-notifications';
+
 interface ChildComponentProps extends RouteComponentProps<any> {}
 
 const Login: React.FC<ChildComponentProps> = ({ history }) => {
-    
+    const { addToast } = useToasts()
+
     function handleLogin(e: any) {
         e.preventDefault();
+        addToast('Ocorreu um erro ao realizar seu login, verifique seus dados e tente novamente!', {
+            appearance: 'error',
+            autoDismiss: true,
+        })
+        // if (!username || !password) {
+        //     setError("Preencha todos os campos para continuar!");
+        // } else {
+        //     try {
+        //         setIsLoading(true);
+        //         const response = await api.post("/sessions", { username, password });
+        //         login(response.data.token);
+        //         const responseUser = await api.get('/userLogged');
+        //         addUserAndCampus(responseUser.data.user, responseUser.data.campus);
 
-        history.push('/home');
+        //         history.push('/home');
+        //     } catch (err) {
+        //         console.log(err);
+                
+        //         setError("Nome de usuário ou senha incorreta.");
+        //     }
+        //     setIsLoading(false);
+        // }
     }
 
     return(

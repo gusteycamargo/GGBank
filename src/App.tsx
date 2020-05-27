@@ -7,6 +7,7 @@ import usePeristedState from './utils/usePersistedState';
 import Routes from './routes';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
+import { ToastProvider } from 'react-toast-notifications';
 
 function App() {
   const [theme, setTheme] = usePeristedState<DefaultTheme>('themeFinances', light);
@@ -19,8 +20,10 @@ function App() {
       <BrowserRouter>
         <ThemeProvider theme={theme}>
             <GlobalStyle/>
-            <Header toggleTheme={toggleTheme}/>
+            <ToastProvider>
+              <Header toggleTheme={toggleTheme}/>
               <Routes/>
+            </ToastProvider>
         </ThemeProvider>
       </BrowserRouter>
     );
