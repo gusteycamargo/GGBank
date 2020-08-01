@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, FormContainer, Form, Input, ButtonLogin, Label } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
-import { login } from '../../services/auth';
+import { login, getToken } from '../../services/auth';
 import api from '../../services/api';
 
 interface ChildComponentProps extends RouteComponentProps<any> {}
@@ -13,6 +13,12 @@ const Login: React.FC<ChildComponentProps> = ({ history }) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    useEffect(() => {
+        if(getToken()) {
+            history.push('/home');
+        }
+    }, [])
 
     async function handleLogin(e: any) {
         e.preventDefault();

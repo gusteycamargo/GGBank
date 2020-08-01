@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { isAuthenticated } from "./services/auth";
 import Login from './pages/Login';
+import Home from "./pages/Home";
 
 interface IProps {
   exact?: boolean;
@@ -25,7 +26,7 @@ const PrivateRoute = ({ component: Component, ...rest }: IProps) => (
 const Routes = () => (
     <Switch>
       <Route exact path="/" component={Login} />
-      <PrivateRoute path="/home" component={() => <h1>Home</h1>} />
+      <PrivateRoute path="/home" component={Home} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
 );
