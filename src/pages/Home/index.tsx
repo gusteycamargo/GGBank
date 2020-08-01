@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, TitleText, ContainerButton, MenuLeft, ButtonMenu } from './styles';
+import { Container, TitleText, ContainerCards, MenuLeft, ButtonMenu, Card } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
@@ -91,6 +91,12 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
               </ButtonMenu>
             </div>
           </MenuLeft>
+          <ContainerCards>
+            <Card>
+              aaaaa
+            </Card>
+          </ContainerCards>
+          
         </Container>
     );
 }

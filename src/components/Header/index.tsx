@@ -12,7 +12,7 @@ const Login: React.FC<Props> = ({ toggleTheme }) => {
     
     return(
         <Container>
-            MyFinances
+            <p>Myfinances</p>
 
             <Switch
                 onChange={toggleTheme}
@@ -22,7 +22,7 @@ const Login: React.FC<Props> = ({ toggleTheme }) => {
                 height={10}
                 width={40}
                 handleDiameter={20}
-                
+                offHandleColor="#333"
             />
         </Container>
     );

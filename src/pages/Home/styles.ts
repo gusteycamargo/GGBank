@@ -9,11 +9,30 @@ export const Container = styled.div`
 
 export const MenuLeft = styled.div`
     display: flex;
-    width: 8%;
+    width: 6%;
+    height: 100%;
     background-color: #FFF;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+`;
+
+export const ContainerCards = styled.div`
+    display: flex;
+    flex: 1;
+    margin: 25px;
+    margin-top: 85px;
+`;
+
+export const Card = styled.div`
+    background-color: #FFF;
+    border-radius: 20px;
+    padding: 10px;
+    width: 25%;
+    height: 40%;
+    -webkit-box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.22);
+    -moz-box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.22);
+    box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.22);
 `;
 
 export const ButtonMenu = styled.div`

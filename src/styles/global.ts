@@ -10,7 +10,7 @@ export default createGlobalStyle`
   }
 
   #root {
-    height: calc(100% - 60px);
+    height: 100%;
     width: 100%;
   }
 
