@@ -113,11 +113,9 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
                 </TotalEarnings>
                 <ButtonCreate>  
                   <Container50>
-                    <TextButtonCreate>Você pode criar uma nova despesa</TextButtonCreate>
+                    <TextButtonCreate>Nova despesa</TextButtonCreate>
                   </Container50>
-                  <Container50>
-                    <ButtonCreateArrow></ButtonCreateArrow>        
-                  </Container50>
+                  <ButtonCreateArrow></ButtonCreateArrow>        
                 </ButtonCreate>
               </Row>
             </Card>

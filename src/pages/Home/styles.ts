@@ -72,6 +72,7 @@ export const ButtonCreate = styled(TotalSpent)`
     background-color: #3723AE;
     border-color: #3723AE;
     padding: 5px 12px;
+    padding-right: 5px;
 `;
 
 export const TotalEarnings = styled(TotalExpenses)`
@@ -96,13 +97,16 @@ export const ButtonCreateArrow = styled.div`
 export const TextButtonCreate = styled.p`
     color: #FFF;
     font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
 `;
 
 export const Container50 = styled.div`
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-right: 10px;
-    width: 50%;
+    align-self: stretch;
 `;
 
 export const ContainerButton = styled.div`
