@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, TitleText, ContainerCards, MenuLeft, ButtonMenu, Card } from './styles';
+import { Container, TitleBold, ContainerCards, Container50, MenuLeft, ButtonCreate, TextButtonCreate, ButtonCreateArrow, ButtonMenu, TotalEarnings, Card, TotalSpent, TitleCard, Row, TotalExpenses } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
@@ -93,7 +93,33 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
           </MenuLeft>
           <ContainerCards>
             <Card>
-              aaaaa
+              <Row>
+                <TitleBold>Suas despesas deste mês</TitleBold>
+              </Row>
+              <Row>
+                <TotalExpenses>
+                  <TitleCard>Total </TitleCard>         
+                  <TitleBold>22</TitleBold>         
+                </TotalExpenses>
+                <TotalSpent>
+                  <TitleCard>Gastos </TitleCard>         
+                  <TitleBold>R$1.600</TitleBold>         
+                </TotalSpent>
+              </Row>
+              <Row>
+                <TotalEarnings>
+                  <TitleCard>Ganhos </TitleCard>         
+                  <TitleBold>R$11.500</TitleBold>         
+                </TotalEarnings>
+                <ButtonCreate>  
+                  <Container50>
+                    <TextButtonCreate>Você pode criar uma nova despesa</TextButtonCreate>
+                  </Container50>
+                  <Container50>
+                    <ButtonCreateArrow></ButtonCreateArrow>        
+                  </Container50>
+                </ButtonCreate>
+              </Row>
             </Card>
           </ContainerCards>
           

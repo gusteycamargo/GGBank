@@ -27,12 +27,55 @@ export const ContainerCards = styled.div`
 export const Card = styled.div`
     background-color: #FFF;
     border-radius: 20px;
-    padding: 10px;
-    width: 25%;
-    height: 40%;
+    padding: 25px;
+    align-self: stretch;
+    height: 45%;
     -webkit-box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.22);
     -moz-box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.22);
     box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.22);
+`;
+
+export const TitleCard = styled.p`
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    margin-right: 7px;
+`;
+
+export const TitleBold = styled(TitleCard)`
+    font-weight: bold;
+    margin-right: 0;
+`;
+
+export const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+`;
+
+export const TotalExpenses = styled.div`
+    border-style: solid;
+    display: flex;
+    flex-direction: row;
+    border-width: 1px;
+    border-color: #68618A;
+    border-radius: 10px;
+    padding: 15px 12px;
+`;
+
+export const TotalSpent = styled(TotalExpenses)`
+    border-color: #FFAE24;
+    margin-left: 10px;
+`;
+
+export const ButtonCreate = styled(TotalSpent)`
+    background-color: #3723AE;
+    border-color: #3723AE;
+    padding: 5px 12px;
+`;
+
+export const TotalEarnings = styled(TotalExpenses)`
+    border-color: #FFD9CF;
 `;
 
 export const ButtonMenu = styled.div`
@@ -41,6 +84,25 @@ export const ButtonMenu = styled.div`
     margin: 15px;
     border-radius: 12px;
     background-color: #68618A;
+`;
+
+export const ButtonCreateArrow = styled.div`
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #68618A;
+`;
+
+export const TextButtonCreate = styled.p`
+    color: #FFF;
+    font-size: 15px;
+`;
+
+export const Container50 = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    width: 50%;
 `;
 
 export const ContainerButton = styled.div`
