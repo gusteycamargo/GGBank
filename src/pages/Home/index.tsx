@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, TitleBold, ContainerCards, Container50, MenuLeft, ButtonCreate, TextButtonCreate, ButtonCreateArrow, ButtonMenu, TotalEarnings, Card, TotalSpent, TitleCard, Row, TotalExpenses } from './styles';
+import { Container, Card, CardGreen, JCBetween, CardBanks, SeparatorMargin } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
@@ -77,50 +77,31 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
 
     return(
         <Container>
-          <MenuLeft>
-            <div>
-              <ButtonMenu>
-
-              </ButtonMenu>
-
-              <ButtonMenu>
-
-              </ButtonMenu>
-              <ButtonMenu>
-
-              </ButtonMenu>
-            </div>
-          </MenuLeft>
-          <ContainerCards>
+          <JCBetween>
             <Card>
-              <Row>
-                <TitleBold>Suas despesas deste mês</TitleBold>
-              </Row>
-              <Row>
-                <TotalExpenses>
-                  <TitleCard>Total </TitleCard>         
-                  <TitleBold>22</TitleBold>         
-                </TotalExpenses>
-                <TotalSpent>
-                  <TitleCard>Gastos </TitleCard>         
-                  <TitleBold>R$1.600</TitleBold>         
-                </TotalSpent>
-              </Row>
-              <Row>
-                <TotalEarnings>
-                  <TitleCard>Ganhos </TitleCard>         
-                  <TitleBold>R$11.500</TitleBold>         
-                </TotalEarnings>
-                <ButtonCreate>  
-                  <Container50>
-                    <TextButtonCreate>Nova despesa</TextButtonCreate>
-                  </Container50>
-                  <ButtonCreateArrow></ButtonCreateArrow>        
-                </ButtonCreate>
-              </Row>
+
             </Card>
-          </ContainerCards>
-          
+            <CardGreen>
+              
+            </CardGreen>
+          </JCBetween>
+          <JCBetween>
+            <CardBanks>
+
+            </CardBanks>
+            <SeparatorMargin/>
+            <CardBanks>
+
+            </CardBanks>
+            <SeparatorMargin/>
+            <CardBanks>
+
+            </CardBanks>
+            <SeparatorMargin/>
+            <CardBanks>
+
+            </CardBanks>
+          </JCBetween>
         </Container>
     );
 }
