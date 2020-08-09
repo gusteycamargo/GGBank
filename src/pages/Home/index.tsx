@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, CardGreen, LittleTitle, TextButtonCreateCard, TextButtonTransfer, Cash, Cents, ButtonTransfer, ButtonCreateCard, Currency, Row, RowCenter, JCBetweenColumn, JCBetween, NumberAccount, Column, GGBankTitle, CardBanks, SeparatorMargin, LastCards, MT30 } from './styles';
+import { Container, Card, CardGreen, LittleTitle, JCCenter, ButtonSeeMore, TextButtonCreateCard, LittleTitleLastCard, TextButtonTransfer, Cash, Cents, ButtonTransfer, ButtonCreateCard, Currency, Row, RowCenter, JCBetweenColumn, JCBetween, NumberAccount, Column, GGBankTitle, CardBanks, SeparatorMargin, LastCards, MT30 } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
 import api from '../../services/api';
+import { FiArrowRight } from "react-icons/fi";
 import {
     Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
   } from 'recharts';
@@ -130,11 +131,22 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
           </JCBetween>
           <JCBetween>
             <LastCards>
-
+              <JCCenter>
+                <LittleTitleLastCard>Conta principal</LittleTitleLastCard>
+                <ButtonSeeMore>
+                  <FiArrowRight color="#FFF" size="20px"/>
+                </ButtonSeeMore>
+              </JCCenter>
+                
             </LastCards>
             <SeparatorMargin/>
             <LastCards>
-
+              <JCCenter>
+                <LittleTitleLastCard>Todas as despesas</LittleTitleLastCard>
+                <ButtonSeeMore>
+                  <FiArrowRight color="#FFF" size="20px"/>
+                </ButtonSeeMore>
+              </JCCenter>
             </LastCards>
           </JCBetween>
         </Container>

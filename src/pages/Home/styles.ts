@@ -14,6 +14,10 @@ export const JCBetween = styled.div`
     justify-content: space-between;
 `;
 
+export const JCCenter = styled(JCBetween)`
+    align-items: center;
+`;
+
 export const JCBetweenColumn = styled(JCBetween)`
     flex-direction: column;
     height: 100%;
@@ -122,4 +126,19 @@ export const LittleTitle = styled.p`
     font-size: 13px;
     color: #AAA;
     font-weight: bold;
+`;
+
+export const LittleTitleLastCard = styled.p`
+    font-size: 15px;
+    color: ${props => props.theme.colors.text};
+    font-weight: bold;
+`;
+
+export const ButtonSeeMore = styled.button`
+    width: 40px;
+    height: 40px;
+    background-color: #066B5D;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
 `;

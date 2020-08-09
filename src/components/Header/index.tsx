@@ -3,7 +3,6 @@ import { Container } from './styles';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import { FiSettings, FiMail, FiBell, FiLogOut } from "react-icons/fi";
-
 interface Props {
     toggleTheme(): void;
 }
