@@ -32,6 +32,11 @@ export const Column = styled.div`
     flex-direction: column;
 `;
 
+export const RowCenter = styled(Column)`
+    flex-direction: row;
+    align-items: center;
+`;
+
 export const Card = styled.div`
     padding: 30px;
     width: 58%;
@@ -49,6 +54,20 @@ export const NumberAccount = styled.p`
     margin-top: 8px;
     font-size: 16px;
     color: #AAA;
+`;
+
+export const Cash = styled.p`
+    font-size: 24px;
+    font-weight: bold;
+`;
+
+export const Cents = styled(Cash)`
+    font-size: 19px;
+`;
+
+export const Currency = styled(Cash)`
+    color: #AAA;
+    margin-left: 5px;
 `;
 
 export const CardGreen = styled(Card)`
