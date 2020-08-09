@@ -60,7 +60,7 @@ export const Card = styled.div`
     width: 58%;
     align-self: stretch;
     border-radius: 35px;
-    background-color: #FFF;
+    background-color: ${props => props.theme.colors.card};
 `;
 
 export const GGBankTitle = styled.p`

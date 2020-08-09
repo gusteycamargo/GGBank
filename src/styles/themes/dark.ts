@@ -4,8 +4,8 @@ export default {
         primary: '#282a36',
         secundary: '#44475a',
         background: '#44475a',
-        headerBackground: '#282a36',
         text: '#FFF',
+        card: '#282a36',
     }
 
 }

@@ -8,6 +8,7 @@ declare module 'styled-components' {
                 secundary: string;
                 background: string;
                 text: string;
+                card: string;
             }
     }
 }
