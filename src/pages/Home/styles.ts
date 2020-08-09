@@ -32,6 +32,24 @@ export const Column = styled.div`
     flex-direction: column;
 `;
 
+export const Row = styled(Column)`
+    flex-direction: row;
+`;
+
+export const ButtonTransfer = styled.button`
+    width: 150px;
+    height: 46px;
+    background-color: #066B5D;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+`;
+
+export const ButtonCreateCard = styled(ButtonTransfer)`
+    background-color: ${props => props.theme.colors.background};
+    margin-left: 15px;
+`;
+
 export const RowCenter = styled(Column)`
     flex-direction: row;
     align-items: center;

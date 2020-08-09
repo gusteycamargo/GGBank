@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, CardGreen, LittleTitle, Cash, Cents, Currency, RowCenter, JCBetweenColumn, JCBetween, NumberAccount, Column, GGBankTitle, CardBanks, SeparatorMargin, LastCards, MT30 } from './styles';
+import { Container, Card, CardGreen, LittleTitle, Cash, Cents, ButtonTransfer, ButtonCreateCard, Currency, Row, RowCenter, JCBetweenColumn, JCBetween, NumberAccount, Column, GGBankTitle, CardBanks, SeparatorMargin, LastCards, MT30 } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
@@ -97,13 +97,14 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
                   </RowCenter>
                 </JCBetween>
                 <MT30/>
-                <JCBetween>
-                  <Column>
-                    <p>teste</p>
-                    <p>teste</p>
-                  </Column>
-                  <p>6800000</p>
-                </JCBetween>
+                <Row>
+                  <ButtonTransfer>
+
+                  </ButtonTransfer>
+                  <ButtonCreateCard>
+                    
+                  </ButtonCreateCard>
+                </Row>
               </JCBetweenColumn>
             </Card>
             <CardGreen>
