@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, CardGreen, LittleTitle, JCCenter, ButtonSeeMore, TextButtonCreateCard, LittleTitleLastCard, TextButtonTransfer, Cash, Cents, ButtonTransfer, ButtonCreateCard, Currency, Row, RowCenter, JCBetweenColumn, JCBetween, NumberAccount, Column, GGBankTitle, CardBanks, SeparatorMargin, LastCards, MT30 } from './styles';
+import { Container, Card, CardGreen, ContainerAlignSelf, ButtonSeeMoreTransactions, ContainerAlignSelfEnd, TitlePaymentType, LittleTitle, ContainerFlex, TitleEstablishment, LineTransfer, TextTransfer, JCCenter, ButtonSeeMore, TextButtonCreateCard, LittleTitleLastCard, TextButtonTransfer, Cash, Cents, ButtonTransfer, ButtonCreateCard, Currency, Row, RowCenter, JCBetweenColumn, JCBetween, NumberAccount, Column, GGBankTitle, CardBanks, SeparatorMargin, LastCards, MT30 } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
@@ -132,14 +132,123 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
           <JCBetween>
             <LastCards>
               <JCCenter>
-                <LittleTitleLastCard>Conta principal</LittleTitleLastCard>
+                <LittleTitleLastCard>Últimas transações</LittleTitleLastCard>
                 <ButtonSeeMore>
                   <FiArrowRight color="#FFF" size="20px"/>
                 </ButtonSeeMore>
               </JCCenter>
-                
+              <MT30 style={{marginTop: "15px"}}/>
+              <LineTransfer>
+                <ContainerAlignSelf>
+                  <TextTransfer>Hoje</TextTransfer>
+                </ContainerAlignSelf>
+                <ContainerFlex>
+                  <TitleEstablishment>Starbucks Cafe</TitleEstablishment>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TitlePaymentType>Cartão de débito</TitlePaymentType>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TextTransfer>Comida</TextTransfer>
+                </ContainerFlex>
+                <ContainerAlignSelfEnd>
+                  <TextTransfer>- R$45.00</TextTransfer>
+                </ContainerAlignSelfEnd>
+              </LineTransfer>
+              <LineTransfer>
+                <ContainerAlignSelf>
+                  <TextTransfer>Hoje</TextTransfer>
+                </ContainerAlignSelf>
+                <ContainerFlex>
+                  <TitleEstablishment>Starbucks Cafe</TitleEstablishment>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TitlePaymentType>Cartão de débito</TitlePaymentType>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TextTransfer>Comida</TextTransfer>
+                </ContainerFlex>
+                <ContainerAlignSelfEnd>
+                  <TextTransfer>- R$45.00</TextTransfer>
+                </ContainerAlignSelfEnd>
+              </LineTransfer>
+              <LineTransfer>
+                <ContainerAlignSelf>
+                  <TextTransfer>Hoje</TextTransfer>
+                </ContainerAlignSelf>
+                <ContainerFlex>
+                  <TitleEstablishment>Starbucks Cafe</TitleEstablishment>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TitlePaymentType>Cartão de débito</TitlePaymentType>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TextTransfer>Comida</TextTransfer>
+                </ContainerFlex>
+                <ContainerAlignSelfEnd>
+                  <TextTransfer>- R$45.00</TextTransfer>
+                </ContainerAlignSelfEnd>
+              </LineTransfer>
+              <LineTransfer>
+                <ContainerAlignSelf>
+                  <TextTransfer>Hoje</TextTransfer>
+                </ContainerAlignSelf>
+                <ContainerFlex>
+                  <TitleEstablishment>Starbucks Cafe</TitleEstablishment>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TitlePaymentType>Cartão de débito</TitlePaymentType>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TextTransfer>Comida</TextTransfer>
+                </ContainerFlex>
+                <ContainerAlignSelfEnd>
+                  <TextTransfer>- R$45.00</TextTransfer>
+                </ContainerAlignSelfEnd>
+              </LineTransfer>
+              <LineTransfer>
+                <ContainerAlignSelf>
+                  <TextTransfer>Hoje</TextTransfer>
+                </ContainerAlignSelf>
+                <ContainerFlex>
+                  <TitleEstablishment>Starbucks Cafe</TitleEstablishment>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TitlePaymentType>Cartão de débito</TitlePaymentType>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TextTransfer>Comida</TextTransfer>
+                </ContainerFlex>
+                <ContainerAlignSelfEnd>
+                  <TextTransfer>- R$45.00</TextTransfer>
+                </ContainerAlignSelfEnd>
+              </LineTransfer>
+              <LineTransfer>
+                <ContainerAlignSelf>
+                  <TextTransfer>Hoje</TextTransfer>
+                </ContainerAlignSelf>
+                <ContainerFlex>
+                  <TitleEstablishment>Starbucks Cafe</TitleEstablishment>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TitlePaymentType>Cartão de débito</TitlePaymentType>
+                </ContainerFlex>
+                <ContainerFlex>
+                  <TextTransfer>Comida</TextTransfer>
+                </ContainerFlex>
+                <ContainerAlignSelfEnd>
+                  <TextTransfer>- R$45.00</TextTransfer>
+                </ContainerAlignSelfEnd>
+              </LineTransfer>
+              <ButtonSeeMoreTransactions>
+                <TextTransfer style={{ marginRight: "5px", fontSize: "15px" }}>Ver mais</TextTransfer>
+                <FiArrowRight color="#066B5D" size="20px"/>
+              </ButtonSeeMoreTransactions>
+              
             </LastCards>
+
             <SeparatorMargin/>
+
             <LastCards>
               <JCCenter>
                 <LittleTitleLastCard>Todas as despesas</LittleTitleLastCard>

@@ -14,6 +14,16 @@ export const JCBetween = styled.div`
     justify-content: space-between;
 `;
 
+export const ButtonSeeMoreTransactions = styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+`;
+
 export const JCCenter = styled(JCBetween)`
     align-items: center;
 `;
@@ -117,7 +127,9 @@ export const TextButtonCreateCard = styled.p`
 `;
 
 export const LastCards = styled(Card)`
+    width: 50%;
     height: 400px;
+    align-self: normal;
     margin-top: 20px;
     margin-bottom: 20px;
 `;
@@ -141,4 +153,66 @@ export const ButtonSeeMore = styled.button`
     cursor: pointer;
     border: none;
     border-radius: 10px;
+`;
+
+export const LineTransfer = styled.div`
+    width: 100%;
+    padding: 12px 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #AAA;
+    display: flex;
+    flex-direction: row;
+`;
+
+export const TextTransfer = styled.p`
+    font-size: 13px;
+    color: ${props => props.theme.colors.text};
+    font-weight: bold;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+`;
+
+export const ContainerFlex = styled.div`
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+`;
+
+export const ContainerAlignSelf = styled.div`
+    display: flex;
+    align-self: stretch;
+    padding-right: 30px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+`;
+
+export const ContainerAlignSelfEnd = styled.div`
+    display: flex;
+    align-self: stretch;
+    padding-left: 30px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+`;
+
+export const TitleEstablishment = styled.p`
+    font-size: 13px;
+    color: #555;
+    font-weight: bold;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+`;
+
+export const TitlePaymentType = styled(TitleEstablishment)`
+    color: #AAA;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
 `;
