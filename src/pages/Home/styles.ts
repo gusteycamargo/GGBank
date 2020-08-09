@@ -100,6 +100,18 @@ export const CardBanks = styled(Card)`
     margin-top: 20px;
 `;
 
+export const TextButtonTransfer = styled.p`
+    font-size: 12px;
+    font-weight: bold;
+    color: ${props => props.theme.colors.textInverted}
+`;
+
+export const TextButtonCreateCard = styled.p`
+    font-size: 12px;
+    font-weight: bold;
+    color: ${props => props.theme.colors.text}
+`;
+
 export const LastCards = styled(Card)`
     height: 400px;
     margin-top: 20px;

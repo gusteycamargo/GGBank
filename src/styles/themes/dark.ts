@@ -6,6 +6,7 @@ export default {
         background: '#44475a',
         text: '#FFF',
         card: '#282a36',
+        textInverted: '#FFF'
     }
 
 }
