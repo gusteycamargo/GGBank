@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Container } from './styles';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
+import { FiSettings, FiMail, FiBell, FiLogOut } from "react-icons/fi";
 
 interface Props {
     toggleTheme(): void;
@@ -12,18 +13,24 @@ const Login: React.FC<Props> = ({ toggleTheme }) => {
     
     return(
         <Container>
-            <p>Myfinances</p>
-
-            <Switch
-                onChange={toggleTheme}
-                checked={title === 'dark'}
-                checkedIcon={false}
-                uncheckedIcon={false}
-                height={10}
-                width={40}
-                handleDiameter={20}
-                offHandleColor="#333"
-            />
+            <p>GGBank</p>
+            
+            <div>
+                <FiSettings size="20px" style={{marginRight: "10px"}}/>
+                <FiMail size="20px" style={{marginRight: "10px"}}/>
+                <FiBell size="20px" style={{marginRight: "10px"}}/>
+                <Switch
+                    onChange={toggleTheme}
+                    checked={title === 'dark'}
+                    checkedIcon={false}
+                    uncheckedIcon={false}
+                    height={10}
+                    width={40}
+                    handleDiameter={20}
+                    offHandleColor="#333"
+                />
+                <FiLogOut size="20px" style={{marginLeft: "20px"}}/>
+            </div>
         </Container>
     );
 }

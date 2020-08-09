@@ -2,14 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     height: 60px;
-    background-color: ${props => props.theme.colors.primary};
+    background-color: ${props => props.theme.colors.background};
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     color: ${props => props.theme.colors.text};
     padding: 0 30px;
-    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.35);
-    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.35);
-    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.35);
 `;

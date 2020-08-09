@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
     padding: 0 30px;
     padding-top: 20px;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
 `;
@@ -37,4 +35,10 @@ export const CardBanks = styled(Card)`
     flex: 1;
     height: 110px;
     margin-top: 20px;
+`;
+
+export const LastCards = styled(Card)`
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 `;
