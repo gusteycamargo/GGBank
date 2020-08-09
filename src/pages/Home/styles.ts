@@ -14,15 +14,41 @@ export const JCBetween = styled.div`
     justify-content: space-between;
 `;
 
+export const JCBetweenColumn = styled(JCBetween)`
+    flex-direction: column;
+    height: 100%;
+`;
+
 export const SeparatorMargin = styled.div`
     margin: 0 15px;
 `;
 
+export const MT30 = styled.div`
+    margin-top: 30px;
+`;
+
+export const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
 export const Card = styled.div`
+    padding: 30px;
     width: 58%;
-    height: 280px;
+    align-self: stretch;
     border-radius: 35px;
     background-color: #FFF;
+`;
+
+export const GGBankTitle = styled.p`
+    font-size: 22px;
+    font-weight: bold;
+`;
+
+export const NumberAccount = styled.p`
+    margin-top: 8px;
+    font-size: 16px;
+    color: #AAA;
 `;
 
 export const CardGreen = styled(Card)`
@@ -41,4 +67,10 @@ export const LastCards = styled(Card)`
     height: 400px;
     margin-top: 20px;
     margin-bottom: 20px;
+`;
+
+export const LittleTitle = styled.p`
+    font-size: 13px;
+    color: #AAA;
+    font-weight: bold;
 `;

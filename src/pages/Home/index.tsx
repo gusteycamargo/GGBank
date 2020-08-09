@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, CardGreen, JCBetween, CardBanks, SeparatorMargin, LastCards } from './styles';
+import { Container, Card, CardGreen, LittleTitle, JCBetweenColumn, JCBetween, NumberAccount, Column, GGBankTitle, CardBanks, SeparatorMargin, LastCards, MT30 } from './styles';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
@@ -79,7 +79,28 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
         <Container>
           <JCBetween>
             <Card>
-
+              <JCBetweenColumn>
+                <JCBetween>
+                  <LittleTitle>Conta principal</LittleTitle>
+                  <LittleTitle>Saldo disponível</LittleTitle>
+                </JCBetween>
+                <MT30/>
+                <JCBetween>
+                  <Column>
+                    <GGBankTitle>Sua conta na GGBank</GGBankTitle>
+                    <NumberAccount>1234 5678 9012 1025</NumberAccount>
+                  </Column>
+                  <p>6800000</p>
+                </JCBetween>
+                <MT30/>
+                <JCBetween>
+                  <Column>
+                    <p>teste</p>
+                    <p>teste</p>
+                  </Column>
+                  <p>6800000</p>
+                </JCBetween>
+              </JCBetweenColumn>
             </Card>
             <CardGreen>
               
