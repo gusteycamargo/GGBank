@@ -256,6 +256,36 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
                   <FiArrowRight color="#FFF" size="20px"/>
                 </ButtonSeeMore>
               </JCCenter>
+              <MT30 style={{marginTop: "15px"}}/>
+              <JCBetween>
+                <Column style={{ flex: 1 }}>
+                  <LittleTitle>dia</LittleTitle>
+                  <RowCenter style={{ marginTop: "10px" }}>
+                    <Cash style={{ fontSize: "17px" }}>68.756,</Cash>
+                    <Cents style={{ fontSize: "15px" }}>56</Cents>
+                    <Currency style={{ fontSize: "17px" }}>R$</Currency>
+                  </RowCenter>
+                </Column>
+                <Column style={{ flex: 1 }}>
+                  <LittleTitle>semana</LittleTitle>
+                  <RowCenter style={{ marginTop: "10px" }}>
+                    <Cash style={{ fontSize: "17px" }}>68.756,</Cash>
+                    <Cents style={{ fontSize: "15px" }}>56</Cents>
+                    <Currency style={{ fontSize: "17px" }}>R$</Currency>
+                  </RowCenter>
+                </Column>
+                <Column style={{ flex: 1 }}>
+                  <LittleTitle>mês</LittleTitle>
+                  <RowCenter style={{ marginTop: "10px" }}>
+                    <Cash style={{ fontSize: "17px" }}>68.756,</Cash>
+                    <Cents style={{ fontSize: "15px" }}>56</Cents>
+                    <Currency style={{ fontSize: "17px" }}>R$</Currency>
+                  </RowCenter>
+                </Column>
+              </JCBetween>
+              <LineTransfer/>
+              <MT30 style={{marginTop: "15px"}}/>
+              <LittleTitleLastCard>Último mês</LittleTitleLastCard>
             </LastCards>
           </JCBetween>
         </Container>
