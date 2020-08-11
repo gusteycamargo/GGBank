@@ -5,9 +5,12 @@ import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
 import api from '../../services/api';
 import { FiArrowRight } from "react-icons/fi";
+import Paper from '@material-ui/core/Paper';
 import {
-    Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
-  } from 'recharts';
+  Chart,
+  PieSeries,
+} from '@devexpress/dx-react-chart-material-ui';
+import { Animation } from '@devexpress/dx-react-chart';
 
 interface Expense {
     id: number;
@@ -26,25 +29,32 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
     const [listOfExpenses, setListOfExpenses] = useState<Expense[]>([]);
 
     const data = [
-        {
-          subject: 'Math', A: 120, B: 110, fullMark: 150,
-        },
-        {
-          subject: 'Chinese', A: 98, B: 130, fullMark: 150,
-        },
-        {
-          subject: 'English', A: 86, B: 130, fullMark: 150,
-        },
-        {
-          subject: 'Geography', A: 99, B: 100, fullMark: 150,
-        },
-        {
-          subject: 'Physics', A: 85, B: 90, fullMark: 150,
-        },
-        {
-          subject: 'History', A: 65, B: 85, fullMark: 150,
-        },
-      ];
+      { country: 'Russia', area: 12 },
+      { country: 'Canada', area: 7 },
+      { country: 'USA', area: 7 },
+      { country: 'China', area: 7 },
+      { country: 'Brazil', area: 6 },
+      { country: 'Australia', area: 5 },
+      { country: 'India', area: 2 },
+      { country: 'Others', area: 55 },
+    ];
+
+    const config = {
+      forceFit: true,
+      title: {
+        visible: true,
+        text: '环图',
+      },
+      description: {
+        visible: true,
+        text: '环图的外半径决定环图的大小，而内半径决定环图的厚度。',
+      },
+      radius: 0.8,
+      padding: 'auto',
+      data,
+      angleField: 'value',
+      colorField: 'type',
+    };
 
     useEffect(() => {
         
@@ -111,23 +121,6 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
             <CardGreen>
               
             </CardGreen>
-          </JCBetween>
-          <JCBetween>
-            <CardBanks>
-
-            </CardBanks>
-            <SeparatorMargin/>
-            <CardBanks>
-
-            </CardBanks>
-            <SeparatorMargin/>
-            <CardBanks>
-
-            </CardBanks>
-            <SeparatorMargin/>
-            <CardBanks>
-
-            </CardBanks>
           </JCBetween>
           <JCBetween>
             <LastCards>
@@ -286,6 +279,19 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
               <LineTransfer/>
               <MT30 style={{marginTop: "15px"}}/>
               <LittleTitleLastCard>Último mês</LittleTitleLastCard>
+              <RowCenter style={{ width: '100%', justifyContent: 'center' }}>
+                <Chart
+                  data={data}
+                  height={200}
+                  width={200}
+                >
+                  <PieSeries
+                    valueField="area"
+                    argumentField="country"
+                  />
+                </Chart>
+                <p>teste</p>
+              </RowCenter>
             </LastCards>
           </JCBetween>
         </Container>

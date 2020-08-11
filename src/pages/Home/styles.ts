@@ -57,6 +57,7 @@ export const ButtonTransfer = styled.button`
     border-radius: 10px;
     cursor: pointer;
     border: none;
+    outline: none;
 `;
 
 export const ButtonCreateCard = styled(ButtonTransfer)`
@@ -153,6 +154,7 @@ export const ButtonSeeMore = styled.button`
     cursor: pointer;
     border: none;
     border-radius: 10px;
+    outline: none;
 `;
 
 export const LineTransfer = styled.div`
