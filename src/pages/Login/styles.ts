@@ -20,6 +20,7 @@ export const FormContainer = styled.div`
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 1px solid #bed4ff;
     padding: 35px;
+    background-color: ${props => props.theme.colors.card};
 `;
 
 export const Form = styled.form`
@@ -57,7 +58,7 @@ export const Input = styled.input`
 export const ButtonLogin = styled.button`
     color: #fff;
     font-size: 16px;
-    background: ${props => props.theme.colors.primary};
+    background-color: #066B5D;
     height: 46px;
     padding: 0 20px;
     border: 0;
@@ -71,6 +72,6 @@ export const ButtonLogin = styled.button`
 
     &:hover {
         trasition: 1s;
-        background: ${props => props.theme.colors.secundary};
+        background-color: #066B5D;
     }
 `;

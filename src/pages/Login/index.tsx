@@ -14,11 +14,11 @@ const Login: React.FC<ChildComponentProps> = ({ history }) => {
     const [password, setPassword] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    useEffect(() => {
-        if(getToken()) {
-            history.push('/home');
-        }
-    }, [])
+    // useEffect(() => {
+    //     if(getToken()) {
+    //         history.push('/home');
+    //     }
+    // }, [])
 
     async function handleLogin(e: any) {
         e.preventDefault();
@@ -31,6 +31,7 @@ const Login: React.FC<ChildComponentProps> = ({ history }) => {
             try {
                 setIsLoading(true);
                 const response = await api.post("/sessions", { email, password });
+                
                 login(response.data.token);
 
                 history.push('/home');
