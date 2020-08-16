@@ -4,6 +4,8 @@ import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import { FiSettings, FiMail, FiBell, FiLogOut } from "react-icons/fi";
 import { logout } from '../../services/auth';
+import { History } from 'history';
+
 interface Props {
     toggleTheme(): void;
 }
@@ -38,7 +40,7 @@ const Login: React.FC<Props> = ({ toggleTheme }) => {
                         cursor: 'pointer',
                         outline: 'none',
                     }}
-                    onClick={() => logout()}
+                    onClick={logout}                    
                 />
             </div>
         </Container>
