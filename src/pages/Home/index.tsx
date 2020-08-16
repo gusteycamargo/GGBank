@@ -11,6 +11,8 @@ import {
   PieSeries,
 } from '@devexpress/dx-react-chart-material-ui';
 import { Animation } from '@devexpress/dx-react-chart';
+import { useSelector, useDispatch } from 'react-redux';
+import { UserLogged } from '../../store/actions/userLogged/types';
 
 interface Expense {
     id: number;
@@ -21,12 +23,25 @@ interface Expense {
 
 interface ChildComponentProps extends RouteComponentProps<any> {}
 
+interface IRootState {
+  userLogged: {
+    userLogged: UserLogged
+  }
+}
+
 const Home: React.FC<ChildComponentProps> = ({ history }) => {
     const { addToast } = useToasts()
     const [email, setEmail] = useState<string>('');
+    const [user, setUser] = useState<object>({})
     const [password, setPassword] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [listOfExpenses, setListOfExpenses] = useState<Expense[]>([]);
+    //const userLogged = useSelector<IRootState, boolean>(state => state.userLogged);
+    // TS infers type: (state: RootState) => boolean
+    const selectUserLogged = (state: IRootState) => state.userLogged.userLogged
+
+    // TS infers `isOn` is boolean
+    const userLogged = useSelector(selectUserLogged)
 
     const data = [
       { country: 'Russia', area: 12 },
@@ -57,34 +72,9 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
     };
 
     useEffect(() => {
-        
+      console.log(userLogged);
+      
     }, [])
-
-    // async function handleLogin(e: any) {
-    //     e.preventDefault();
-    //     if (!email || !password) {
-    //         addToast('Preencha todos os campos para realizar o login!', {
-    //             appearance: 'error',
-    //             autoDismiss: true,
-    //         })
-    //     } else {
-    //         try {
-    //             setIsLoading(true);
-    //             const response = await api.post("/sessions", { email, password });
-    //             login(response.data.token);
-
-    //             history.push('/home');
-    //         } catch (err) {
-    //             console.log(err);
-                
-    //             addToast('Ocorreu um erro ao realizar seu login, verifique seus dados e tente novamente!', {
-    //                 appearance: 'error',
-    //                 autoDismiss: true,
-    //             })
-    //         }
-    //         setIsLoading(false);
-    //     }
-    // }
 
     return(
         <Container>
@@ -99,10 +89,10 @@ const Home: React.FC<ChildComponentProps> = ({ history }) => {
                 <JCBetween>
                   <Column>
                     <GGBankTitle>Sua conta na GGBank</GGBankTitle>
-                    <NumberAccount>1234 5678 9012 1025</NumberAccount>
+                    <NumberAccount>{userLogged.account_id}</NumberAccount>
                   </Column>
                   <RowCenter>
-                    <Cash>68.756,</Cash>
+                    <Cash>{userLogged.account.amount_current},</Cash>
                     <Cents>56</Cents>
                     <Currency>R$</Currency>
                   </RowCenter>

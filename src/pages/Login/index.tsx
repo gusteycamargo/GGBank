@@ -5,7 +5,9 @@ import { useToasts } from 'react-toast-notifications';
 import ClockLoader from "react-spinners/ClockLoader";
 import { login, getToken } from '../../services/auth';
 import api from '../../services/api';
-
+import { useSelector, useDispatch } from 'react-redux';
+import * as UserLoggedActions from '../../store/actions/userLogged/index';
+import { UserLogged } from '../../store/actions/userLogged/types';
 interface ChildComponentProps extends RouteComponentProps<any> {}
 
 const Login: React.FC<ChildComponentProps> = ({ history }) => {
@@ -13,12 +15,17 @@ const Login: React.FC<ChildComponentProps> = ({ history }) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     if(getToken()) {
-    //         history.push('/home');
-    //     }
-    // }, [])
+    useEffect(() => {
+        if(getToken()) {
+            history.push('/home');
+        }
+    }, []);
+
+    function setUserLogged(value: UserLogged) {
+        dispatch(UserLoggedActions.userLogged(value));
+    }
 
     async function handleLogin(e: any) {
         e.preventDefault();
@@ -31,10 +38,17 @@ const Login: React.FC<ChildComponentProps> = ({ history }) => {
             try {
                 setIsLoading(true);
                 const response = await api.post("/sessions", { email, password });
-                
-                login(response.data.token);
 
-                history.push('/home');
+                if(response.data.token) {
+                    login(response.data.token);
+                    const userLogged = await api.get("/userLogged");
+
+                    setUserLogged(userLogged.data)   
+                    console.log(userLogged.data);
+                                     
+                    history.push('/home');
+                }
+
             } catch (err) {
                 console.log(err);
                 

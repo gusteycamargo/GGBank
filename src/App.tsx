@@ -8,6 +8,8 @@ import Routes from './routes';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import { ToastProvider } from 'react-toast-notifications';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   const [theme, setTheme] = usePeristedState<DefaultTheme>('themeFinances', light);
@@ -18,13 +20,15 @@ function App() {
 
     return (
       <BrowserRouter>
-        <ThemeProvider theme={theme}>
-            <GlobalStyle/>
-            <ToastProvider>
-              <Header toggleTheme={toggleTheme}/>
-              <Routes/>
-            </ToastProvider>
-        </ThemeProvider>
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+              <GlobalStyle/>
+              <ToastProvider>
+                <Header toggleTheme={toggleTheme}/>
+                <Routes/>
+              </ToastProvider>
+          </ThemeProvider>
+        </Provider>
       </BrowserRouter>
     );
 }
